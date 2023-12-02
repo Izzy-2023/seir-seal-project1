@@ -2,70 +2,119 @@
 // GLOBAL VARIABLES
 // *************************************
 
-const nasaAPIKey = "sByYd8sUGG38uhb6ZjJf50d45fowIfERgprTWT0D"
-const stockAPIKey = "9XB6ZitYyH4MKadwhBucswuHGLsBlxoPchqc2Doc"
+const apikey = "sByYd8sUGG38uhb6ZjJf50d45fowIfERgprTWT0D"
+const baseURL = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000"
 
 // ***************************************
 // FUNCTIONS
 // ***************************************
 
+// // function to fetch the data
+// function fetchRoverPhotos(photos){
+
+//     // construct our url
+//     const url = `${baseURL}?apikey=${apikey}&t=${photos}`
+
+//     // fetch from the url
+//     fetch(url)
+//     .then((res) => {return res.json()})
+//     .then((data) => {
+//         renderRover(data)
+//     })
+    
+// }
+
+// // function that render the movie to the dom
+// function renderRover(photos){
+//     // grab the div.movie
+//     const moviediv = document.querySelector(".photos")
+//     // alter the HTML inside the div
+//     moviediv.innerHTML = `
+//     <h1>${mars.Description}</h1>
+//     <h2>${movie.Released}</h2>
+//     <img src=${photos[0]}>
+//     `
+// }
 
 $.ajax("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=sByYd8sUGG38uhb6ZjJf50d45fowIfERgprTWT0D")
 .then((data) => {
     console.log(data)
+    console.log(data.photos[0].img_src)
+    console.log(data.photos[5].img_src)
     
 })
 
+/
 
 
 
-// function fetchRoverPhotos(rover, sol) {
-//     // Construct the API URL with the specified rover and sol
-//     var url = "https://api.nasa.gov/mars-photos/api/v1/rovers/" + rover + "/photos?sol=" + sol + "&api_key=9XB6ZitYyH4MKadwhBucswuHGLsBlxoPchqc2Doc";
-
-//     // Make an AJAX GET request using jQuery
-//     $.ajax({
-//         url: url,
-//         method: "GET",
-
-//         // Handle successful response
-//         success: function(response) {
-//             console.log("Successfully retrieved photos:", response);
-//             displayPhotos(response.photos); // Pass the retrieved photos to the displayPhotos function
-//         },
-
-//         // Handle error response
-//         error: function(error) {
-//             console.error("Error fetching photos:", error);
-//         }
-//     });
-// }
+// function to handle the form submission
+function handleSubmit(event){
+    // prevent the refreshing of the page from the form submission
+    event.preventDefault()
+    // grab the form from the event
+    const form = event.target
+    console.log(form)
+    // create a formData to access the form data
+    const formData = new FormData(form)
+    // grab the movie title
+    const marsRover = formData.get("photo")
+    console.log(marsRover)
+    // fetch the specified movie
+    getMovie(marsRover)
+}
 
 
-// function displayPhotos(photos) {
-//     // Get the HTML element where the photos will be displayed
-//     var photoContainer = document.getElementById("photo-container");
 
-//     // Clear the photo container before adding new images
-//     photoContainer.innerHTML = "";
+function fetchRoverPhotos(rover, sol) {
+    // Construct the API URL with the specified rover and sol
+    var url = "https://api.nasa.gov/mars-photos/api/v1/rovers/" + rover + "/photos?sol=" + sol + "&api_key=sByYd8sUGG38uhb6ZjJf50d45fowIfERgprTWT0D";
 
-//     // Iterate through the array of photos
-//     photos.forEach(function(photo) {
-//         // Create an image element for each photo
-//         var imageElement = document.createElement("img");
+    // Make an AJAX GET request using jQuery
+    $.ajax({
+        url: url,
+        method: "GET",
 
-//         // Set the image source and alt text
-//         imageElement.src = photo.img_src;
-//         imageElement.alt = photo.camera + " image from Sol " + photo.sol;
+        // Handle successful response
+        success: function(response) {
+            console.log("Successfully retrieved photos:", response);
+            displayPhotos(response.photos); // Pass the retrieved photos to the displayPhotos function
+        },
 
-//         // Append the image element to the photo container
-//         photoContainer.appendChild(imageElement);
-//     });
-// }
+        // Handle error response
+        error: function(error) {
+            console.error("Error fetching photos:", error);
+        }
+    });
+}
+
+
+function displayPhotos(photos) {
+    // Get the HTML element where the photos will be displayed
+    var photo = document.getElementById("photo");
+
+    // Clear the photo container before adding new images
+    photo.innerHTML = "";
+
+    // Iterate through the array of photos
+    photos.forEach(function(photo) {
+        // Create an image element for each photo
+        var imageElement = document.createElement("img");
+
+        // Set the image source and alt text
+        imageElement.src = photo.img_src;
+        imageElement.alt = photo.camera + " image from Sol " + photo.sol;
+
+        // Append the image element to the photo container
+        photo.appendChild(imageElement);
+    });
+}
 
 
 // **************************************
 // MAIN CODE
 // **************************************
-
-// fetchRoverPhotos("curiosity", 1000); // Fetch photos for Curiosity on Sol 1000
+// add the function to the form submission
+document.querySelector("form").addEventListener("submit", handleSubmit)
+// initial call to populate the first movie
+fetchRoverPhotos("curiosity", 1000); // Fetch photos for Curiosity on Sol 1000
