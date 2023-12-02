@@ -104,7 +104,7 @@ Here put a mix of text explanation plus a picture giving us an idea of the layou
 
 |Day | Goal | What I accomplished |
 |----|------|-----------------------|
-| Sat | Create Readme, Deploy, Get Approval | |
+| Sat | Create Readme, Deploy, Get Approval | Drafted Readme file, deployed app, waiting approval |
 | Sun | Build fetch of data in JS file ||
 | Mon | Render data from API on screen ||
 | Tues| Build form for user to interact with ||
