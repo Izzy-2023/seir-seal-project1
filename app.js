@@ -42,30 +42,30 @@ $.ajax("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000
 // }
 
 
-function displayPhotos(photos) {
-    // Get the HTML element where the photos will be displayed
-    var photoContainer = document.getElementById("photo-container");
+// function displayPhotos(photos) {
+//     // Get the HTML element where the photos will be displayed
+//     var photoContainer = document.getElementById("photo-container");
 
-    // Clear the photo container before adding new images
-    photoContainer.innerHTML = "";
+//     // Clear the photo container before adding new images
+//     photoContainer.innerHTML = "";
 
-    // Iterate through the array of photos
-    photos.forEach(function(photo) {
-        // Create an image element for each photo
-        var imageElement = document.createElement("img");
+//     // Iterate through the array of photos
+//     photos.forEach(function(photo) {
+//         // Create an image element for each photo
+//         var imageElement = document.createElement("img");
 
-        // Set the image source and alt text
-        imageElement.src = photo.img_src;
-        imageElement.alt = photo.camera + " image from Sol " + photo.sol;
+//         // Set the image source and alt text
+//         imageElement.src = photo.img_src;
+//         imageElement.alt = photo.camera + " image from Sol " + photo.sol;
 
-        // Append the image element to the photo container
-        photoContainer.appendChild(imageElement);
-    });
-}
+//         // Append the image element to the photo container
+//         photoContainer.appendChild(imageElement);
+//     });
+// }
 
 
 // **************************************
 // MAIN CODE
 // **************************************
 
-fetchRoverPhotos("curiosity", 1000); // Fetch photos for Curiosity on Sol 1000
+// fetchRoverPhotos("curiosity", 1000); // Fetch photos for Curiosity on Sol 1000

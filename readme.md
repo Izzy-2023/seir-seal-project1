@@ -89,7 +89,7 @@ The Data I get back:
 
 Here put a mix of text explanation plus a picture giving us an idea of the layout of your website.
 
-> The mock up images below will show how the website will look like on a laptop/desktop and mobile phone. This is a simple website with a title, description, input search box and search button. Once the user enters a name of the rover in the search box and clicks on the search button, they will be present with a image below the search box and search button.
+> The mock up images below will show how the website will look like on a laptop/desktop and mobile phone. This is a simple website with a title, description, input search box and search button. Once the user enters a name of the rover in the search box and clicks on the search button, they will be presented with an image and description below the search box and search button.
 
 
 #### Desktop View
