@@ -1,4 +1,4 @@
-# Mars Lookup App
+# Mars Rover Lookup App
 ### by Izzy Zinxhirija
 
 Deployed Site: [https://seir-seal-project1.vercel.app/]
