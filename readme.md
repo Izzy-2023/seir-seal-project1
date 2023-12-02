@@ -7,17 +7,19 @@ Deployed Site: [https://seir-seal-project1.vercel.app/]
 
 A paragraph discussing the idea of your project, the API you are using and desired user experience.
 
-> I am creating a perfume maker, we generate list of perfume ingredient using the items from the perfume ingredient api. Users will select ingredients and generate an imaginary perfume.
+> This website will be used to search for MARS photos by entering the name of the rover (Curiosity, Spirit, Opportunity) in the search box and clicking on the search button. The page will display pictures based on the information entered in the search box. 
 
 ## Details about the API
 
 Give me a brief description of the API you are using and how you plan on using it. Does it use some sort of authentication like an APIkey. List some of the urls are using below.
 
-- `https://www.perfumeapi.com/ingredients`: This returns a json array with all the different ingedients
+> The API does use an APIkey authentication. I have generated an api key from the website. 
+
+- `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&`: This returns a json object with all the photos from the curiority rover.
 
 Sample Fetch/Ajax called:
 ```js
-const url = "https://www.perfumeapi.com/ingredients"
+const url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&"
 fetch(url)
 .then((res) => res.json())
 .then((data) => console.log(data))
@@ -25,47 +27,61 @@ fetch(url)
 
 The Data I get back:
 ```json
+
 [
-  {
-    "ingredient": "Bergamot",
-    "description": "A citrus fruit with a bright, uplifting scent."
-  },
-  {
-    "ingredient": "Lavender",
-    "description": "A flowering plant with a calming, relaxing scent."
-  },
-  {
-    "ingredient": "Rose",
-    "description": "A flowering plant with a romantic, feminine scent."
-  },
-  {
-    "ingredient": "Jasmine",
-    "description": "A flowering plant with an exotic, sensual scent."
-  },
-  {
-    "ingredient": "Sandalwood",
-    "description": "A woody plant with a warm, earthy scent."
-  },
-  {
-    "ingredient": "Patchouli",
-    "description": "A herb with a deep, musky scent."
-  },
-  {
-    "ingredient": "Vanilla",
-    "description": "A spice with a sweet, gourmand scent."
-  },
-  {
-    "ingredient": "Amber",
-    "description": "A fossilized resin with a warm, balsamic scent."
-  },
-  {
-    "ingredient": "Musk",
-    "description": "An animal secretion with a sensual, musky scent."
-  },
-  {
-    "ingredient": "Oud",
-    "description": "A type of agarwood with a dark, mysterious scent."
-  }
+  "photos": 
+        {
+            "id": 102693,
+            "sol": 1000,
+            "camera": {
+                "id": 20,
+                "name": "FHAZ",
+                "rover_id": 5,
+                "full_name": "Front Hazard Avoidance Camera"
+            },
+            "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG",
+            "earth_date": "2015-05-30",
+            "rover": {
+                "id": 5,
+                "name": "Curiosity",
+                "landing_date": "2012-08-06",
+                "launch_date": "2011-11-26",
+                "status": "active",
+                "max_sol": 4024,
+                "max_date": "2023-12-01",
+                "total_photos": 686932,
+                "cameras": [
+                    {
+                        "name": "FHAZ",
+                        "full_name": "Front Hazard Avoidance Camera"
+                    },
+                    {
+                        "name": "NAVCAM",
+                        "full_name": "Navigation Camera"
+                    },
+                    {
+                        "name": "MAST",
+                        "full_name": "Mast Camera"
+                    },
+                    {
+                        "name": "CHEMCAM",
+                        "full_name": "Chemistry and Camera Complex"
+                    },
+                    {
+                        "name": "MAHLI",
+                        "full_name": "Mars Hand Lens Imager"
+                    },
+                    {
+                        "name": "MARDI",
+                        "full_name": "Mars Descent Imager"
+                    },
+                    {
+                        "name": "RHAZ",
+                        "full_name": "Rear Hazard Avoidance Camera"
+                    }
+                ]
+            }
+        },
 ]
 ```
 
@@ -75,11 +91,11 @@ Here put a mix of text explanation plus a picture giving us an idea of the layou
 
 #### Desktop View
 
-![My Desktop View](https://i.imgur.com/5Bs7N6B.png)
+![My Desktop View](https://i.imgur.com/a90dNzk.png)
 
 #### Mobile View
 
-![My Mobile View](https://i.imgur.com/5Bs7N6B.png)
+![My Mobile View](https://i.imgur.com/7QNbLkY.png)
 
 ## Schedule of Work
 
