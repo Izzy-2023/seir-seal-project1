@@ -5,6 +5,6 @@
 
 ## Section
 
-[link text] (images)
+[link text] (URL)
 
-![]
+![Alt Text] (image url)
