@@ -60,63 +60,22 @@ function renderPhotos(photos) {
   
     // Set the first carousel item as active
     document.querySelector("#photo-container .carousel-item").classList.add("active");
-
+    
+    // Invoke the carousel function
     $("#photo-container").carousel()
 
   }
 
-$.ajax("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=sByYd8sUGG38uhb6ZjJf50d45fowIfERgprTWT0D")
-.then((data) => {
-    console.log(data)
-    console.log(data.photos[0].img_src)
-    console.log(data.photos[5].img_src)
-    
-})
+  function handleFormSubmit(event) {
+    event.preventDefault(); // Prevent default form submission
 
+    // Get the selected rover and sol values from the form
+   const rover = document.getElementById("rover").value;
+    const sol = parseInt(document.getElementById("sol").value);
 
-
-// function to handle the form submission
-function handleSubmit(event){
-    // prevent the refreshing of the page from the form submission
-    event.preventDefault()
-    // grab the form from the event
-    const form = event.target
-    console.log(form)
-    // create a formData to access the form data
-    const formData = new FormData(form)
-    // grab the movie title
-    const marsRover = formData.get("photo")
-    console.log(marsRover)
-    // fetch the specified movie
-    getMovie(marsRover)
+    // Make the AJAX request to fetch photos
+    fetchRoverPhotos(rover, sol);
 }
-
-
-
-function fetchRoverPhotos(rover, sol) {
-    // Construct the API URL with the specified rover and sol
-    var url = "https://api.nasa.gov/mars-photos/api/v1/rovers/" + rover + "/photos?sol=" + sol + "&api_key=sByYd8sUGG38uhb6ZjJf50d45fowIfERgprTWT0D";
-
-    // Make an AJAX GET request using jQuery
-    $.ajax({
-        url: url,
-        method: "GET",
-
-        // Handle successful response
-        success: function(response) {
-            console.log("Successfully retrieved photos:", response);
-            displayPhotos(response.photos); // Pass the retrieved photos to the displayPhotos function
-        },
-
-        // Handle error response
-        error: function(error) {
-            console.error("Error fetching photos:", error);
-        }
-    });
-}
-
-
-
 
 
 // **************************************
