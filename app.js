@@ -81,7 +81,6 @@ function renderPhotos(photos) {
 // **************************************
 // MAIN CODE
 // **************************************
-// add the function to the form submission
-document.querySelector("form").addEventListener("submit", handleSubmit)
-// initial call to populate the first movie
-fetchRoverPhotos("curiosity", 1000); // Fetch photos for Curiosity on Sol 1000
+
+// Attach the form submission handler to the form's submit event
+document.getElementById("rover-form").addEventListener("submit", handleFormSubmit);
