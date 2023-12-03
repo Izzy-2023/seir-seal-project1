@@ -9,20 +9,28 @@ const baseURL = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos
 // FUNCTIONS
 // ***************************************
 
-// // function to fetch the data
-// function fetchRoverPhotos(photos){
+function fetchRoverPhotos(rover, sol) {
+    // Construct the API URL with the specified rover and sol
+    const url = "https://api.nasa.gov/mars-photos/api/v1/rovers/" + rover + "/photos?sol=" + sol + "&api_key=sByYd8sUGG38uhb6ZjJf50d45fowIfERgprTWT0D";
 
-//     // construct our url
-//     const url = `${baseURL}?apikey=${apikey}&t=${photos}`
+    // Make an AJAX GET request using jQuery
+    $.ajax({
+        url: url,
+        method: "GET",
 
-//     // fetch from the url
-//     fetch(url)
-//     .then((res) => {return res.json()})
-//     .then((data) => {
-//         renderRover(data)
-//     })
-    
-// }
+        // Handle successful response
+        success: function(response) {
+            console.log("Successfully retrieved photos:", response);
+            renderPhotos(response.photos); // Render the retrieved photos
+        },
+
+        // Handle error response
+        error: function(error) {
+            console.error("Error fetching photos:", error);
+            alert("Error fetching photos: " + error.message); // Display an error message to the user
+        }
+    });
+}
 
 // // function that render the movie to the dom
 // function renderRover(photos){
