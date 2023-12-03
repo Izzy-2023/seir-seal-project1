@@ -32,17 +32,38 @@ function fetchRoverPhotos(rover, sol) {
     });
 }
 
-// // function that render the movie to the dom
-// function renderRover(photos){
-//     // grab the div.movie
-//     const moviediv = document.querySelector(".photos")
-//     // alter the HTML inside the div
-//     moviediv.innerHTML = `
-//     <h1>${mars.Description}</h1>
-//     <h2>${movie.Released}</h2>
-//     <img src=${photos[0]}>
-//     `
-// }
+function renderPhotos(photos) {
+    // Clear the carousel inner container
+    document.querySelector("#photo-container .carousel-inner").innerHTML = "";
+  
+    // Set a fixed height for the carousel image
+    const imageHeight = 400; // Adjust this value as needed
+  
+    // Iterate through the photos
+    photos.forEach(function(photo) {
+      // Create a carousel item
+      const carouselItem = document.createElement("div");
+      carouselItem.classList.add("carousel-item");
+  
+      // Create an image element and set its source and alt text
+      const imageElement = document.createElement("img");
+      imageElement.src = photo.img_src;
+      imageElement.alt = photo.camera + " image from Sol " + photo.sol;
+      imageElement.style.height = imageHeight + "px"; // Set the fixed image height
+  
+      // Add the image to the carousel item
+      carouselItem.appendChild(imageElement);
+  
+      // Add the carousel item to the carousel inner container
+      document.querySelector("#photo-container .carousel-inner").appendChild(carouselItem);
+    });
+  
+    // Set the first carousel item as active
+    document.querySelector("#photo-container .carousel-item").classList.add("active");
+
+    $("#photo-container").carousel()
+
+  }
 
 $.ajax("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=sByYd8sUGG38uhb6ZjJf50d45fowIfERgprTWT0D")
 .then((data) => {
@@ -51,8 +72,6 @@ $.ajax("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000
     console.log(data.photos[5].img_src)
     
 })
-
-/
 
 
 
@@ -97,26 +116,7 @@ function fetchRoverPhotos(rover, sol) {
 }
 
 
-function displayPhotos(photos) {
-    // Get the HTML element where the photos will be displayed
-    var photo = document.getElementById("photo");
 
-    // Clear the photo container before adding new images
-    photo.innerHTML = "";
-
-    // Iterate through the array of photos
-    photos.forEach(function(photo) {
-        // Create an image element for each photo
-        var imageElement = document.createElement("img");
-
-        // Set the image source and alt text
-        imageElement.src = photo.img_src;
-        imageElement.alt = photo.camera + " image from Sol " + photo.sol;
-
-        // Append the image element to the photo container
-        photo.appendChild(imageElement);
-    });
-}
 
 
 // **************************************
