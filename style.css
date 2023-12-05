@@ -4,3 +4,7 @@ body {
     background-image: radial-gradient(circle, red, yellow, green);
     background-repeat: no-repeat;
   }
+  
+  main {
+    height: 100vh;
+  }

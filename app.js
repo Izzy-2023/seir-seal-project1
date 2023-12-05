@@ -27,7 +27,8 @@ function fetchRoverPhotos(rover, sol) {
         // Handle error response
         error: function(error) {
             console.error("Error fetching photos:", error);
-            alert("Error fetching photos: " + error.message); // Display an error message to the user
+            // Display an error message to the user
+            alert("Error fetching photos: " + error.message); 
         }
     });
 }
@@ -49,7 +50,8 @@ function renderPhotos(photos) {
       const imageElement = document.createElement("img");
       imageElement.src = photo.img_src;
       imageElement.alt = photo.camera + " image from Sol " + photo.sol;
-      imageElement.style.height = imageHeight + "px"; // Set the fixed image height
+      // Set the fixed image height
+      imageElement.style.height = imageHeight + "px"; 
   
       // Add the image to the carousel item
       carouselItem.appendChild(imageElement);
