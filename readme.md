@@ -96,9 +96,15 @@ Here put a mix of text explanation plus a picture giving us an idea of the layou
 
 ![My Desktop View](https://i.imgur.com/a90dNzk.png)
 
+#### Desktop View Screenshot
+![My Desktop View Screenshot](https://imgur.com/UhFVOPW.jpg)
+
 #### Mobile View
 
 ![My Mobile View](https://i.imgur.com/7QNbLkY.png)
+
+#### Mobile View Screenshot
+![My Mobile View](https://imgur.com/U7Z2PVS.jpg)
 
 ## Schedule of Work
 

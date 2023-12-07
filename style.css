@@ -3,15 +3,6 @@
 } */
 
 
-h1 {
-  font-family: 'Arial', sans-serif;
-  font-size: 2.5em; 
-}
-
-p {
-  font-size: 1.2em; /* Increase the font size of the p */
-}
-
 body {
     text-align: center;
     margin: auto;
@@ -19,17 +10,20 @@ body {
     background-repeat: no-repeat;
     
   }
-
-  h1 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-
-  }
   
   main {
     min-height: calc(100vh - 150px); 
     
   }
 
+  h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5em; 
+  }
+  
+  p {
+    font-size: 1.2em; 
+  }
   .carousel-inner {
     max-width: 400px; 
     max-height: 350px;
