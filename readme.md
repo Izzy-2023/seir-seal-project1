@@ -117,4 +117,4 @@ Here put a mix of text explanation plus a picture giving us an idea of the layou
 | Wed | wrap up functionality || Functionality has been completed
 |Thurs| mobile layout styling || Added CSS styling for movile layout
 | Fri | Desktop layout styling || Completed desktop styling
-| Sat | Present Project ||
+| Sat | Present Project || 
