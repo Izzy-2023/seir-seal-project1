@@ -1,10 +1,51 @@
+/* * {
+  outline: 3px solid blue;
+} */
+
+
+h1 {
+  font-family: 'Arial', sans-serif;
+  font-size: 2.5em; /
+  margin-bottom: 10px; 
+}
+
+p {
+  font-size: 1.2em; /* Increase the font size of the p */
+}
+
 body {
     text-align: center;
     margin: auto;
     background-image: radial-gradient(circle, red, yellow, green);
     background-repeat: no-repeat;
+    
+  }
+
+  h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
   }
   
   main {
-    height: 100vh;
+    min-height: calc(100vh - 150px); 
+    
   }
+
+  .carousel-inner {
+    max-width: 400px; 
+    max-height: 350px;
+    margin: auto; 
+  }
+
+  .carousel-control-prev, .carousel-control-next {
+    top: calc(50% - 20px); 
+    height: 40px; 
+    width: 40px; 
+    font-size: 20px; 
+    background-color: rgba(0, 0, 0, 0.5); 
+  }
+
+
+  
+
+
