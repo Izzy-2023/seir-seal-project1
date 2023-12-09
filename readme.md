@@ -111,10 +111,10 @@ Here put a mix of text explanation plus a picture giving us an idea of the layou
 |Day | Goal | What I accomplished |
 |----|------|-----------------------|
 | Sat | Create Readme, Deploy, Get Approval | Finished Readme file, deployed app and got approval |
-| Sun | Build fetch of data in JS file || Built fetch function of data in JS file
-| Mon | Render data from API on screen || Rendered data from API on screen
-| Tues| Build form for user to interact with || Completed user form for user interaction
-| Wed | wrap up functionality || Functionality has been completed
-|Thurs| mobile layout styling || Added CSS styling for movile layout
-| Fri | Desktop layout styling || Completed desktop styling
-| Sat | Present Project || 
+| Sun | Build fetch of data in JS file | Built fetch function of data in JS file
+| Mon | Render data from API on screen | Rendered data from API on screen
+| Tues| Build form for user to interact with | Completed user form for user interaction
+| Wed | wrap up functionality | Functionality has been completed
+|Thurs| mobile layout styling | Added CSS styling for movile layout
+| Fri | Desktop layout styling | Completed desktop styling
+| Sat | Present Project | Created Project Video Presentation 

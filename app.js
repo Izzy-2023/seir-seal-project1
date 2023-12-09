@@ -3,7 +3,7 @@
 // *************************************
 
 const apikey = "sByYd8sUGG38uhb6ZjJf50d45fowIfERgprTWT0D"
-const baseURL = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000"
+const baseURL = "https://api.nasa.gov/mars-photos/api/v1/rovers/"
 
 // ***************************************
 // FUNCTIONS
