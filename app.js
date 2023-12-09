@@ -38,7 +38,7 @@ function renderPhotos(photos) {
     document.querySelector("#photo-container .carousel-inner").innerHTML = "";
   
     // Set a fixed height for the carousel image
-    const imageHeight = 400; // Adjust this value as needed
+    const imageHeight = 400; 
   
     // Iterate through the photos
     photos.forEach(function(photo) {
